@@ -19,9 +19,10 @@ final lightTheme = ThemeData(
 final darkTheme = ThemeData(
   brightness: Brightness.dark,
   splashColor: Colors.transparent,
+  scaffoldBackgroundColor: AppColors.darkThemeColor.primaryBackgroundColor,
 )..addAppColor(
     AppThemeType.dark,
-    AppColors.defaultAppColor,
+    AppColors.darkThemeColor,
   );
 
 extension ThemeDataExtensions on ThemeData {
@@ -35,7 +36,7 @@ extension ThemeDataExtensions on ThemeData {
   /// Get app color for current theme.
   AppColors get appColor {
     return _appColorMap[AppThemeSetting.currentAppThemeType] ??
-        AppColors.defaultAppColor;
+        AppColors.darkThemeColor;
   }
 }
 

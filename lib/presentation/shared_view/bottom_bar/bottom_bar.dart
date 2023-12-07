@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:minimalist_bloc_clean_architecture/presentation/shared_view/bottom_bar/bottom_bar.dart';
+import 'package:minimalist_bloc_clean_architecture/resource/gen/assets.gen.dart';
 import 'package:minimalist_bloc_clean_architecture/resource/style/app_colors.dart';
 
 export 'bloc/bottom_bar_bloc.dart';
@@ -14,54 +16,146 @@ class BottomBarApp extends StatelessWidget {
     final BottomBarCubit bottomBarCubit =
         BlocProvider.of<BottomBarCubit>(context);
     return BottomAppBar(
-      height: 70,
+      height: 70.r,
+      padding: EdgeInsets.symmetric(vertical: 10.r),
       color: AppColors.current.secondaryBackgroundColor,
       shape: const CircularNotchedRectangle(), // Shape of notch
-      notchMargin: 5, // Notch margin between floating button and bottom appbar
+      notchMargin: 5.r, // Notch margin between floating button and bottom appbar
       child: Row(
-        // Children inside bottom appbar
         mainAxisSize: MainAxisSize.max,
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
           const SizedBox(),
-          IconButton(
-            icon: Icon(
-              Icons.menu,
-              color: (tabIndex == 0) ? Colors.blue : Colors.white,
-            ),
-            onPressed: () {
+          InkWell(
+            onTap: () {
               bottomBarCubit.setCurrentIndex(0);
             },
-          ),
-          IconButton(
-            icon: Icon(
-              Icons.search,
-              color: (tabIndex == 1) ? Colors.blue : Colors.white,
+            borderRadius: BorderRadius.circular(5.r),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Assets.images.homeIcon.svg(
+                  colorFilter: ColorFilter.mode(
+                      (tabIndex == 0)
+                          ? AppColors.current.primaryColor
+                          : AppColors.current.primaryTextColor,
+                      BlendMode.srcIn),
+                  width: 22.r,
+                  height: 22.r,
+                ),
+                SizedBox(
+                  height: 5.r,
+                ),
+                Text(
+                  'Home',
+                  style: TextStyle(
+                    color: (tabIndex == 0)
+                        ? AppColors.current.primaryColor
+                        : AppColors.current.primaryTextColor,
+                    fontSize: 12,
+                  ),
+                ),
+              ],
             ),
-            onPressed: () {
+          ),
+          InkWell(
+            onTap: () {
               bottomBarCubit.setCurrentIndex(1);
             },
-          ),
-          const SizedBox(
-            width: 20,
-          ),
-          IconButton(
-            icon: Icon(
-              Icons.print,
-              color: (tabIndex == 2) ? Colors.blue : Colors.white,
+            borderRadius: BorderRadius.circular(5.r),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Assets.images.calendarIcon.svg(
+                  colorFilter: ColorFilter.mode(
+                      (tabIndex == 1)
+                          ? AppColors.current.primaryColor
+                          : AppColors.current.primaryTextColor,
+                      BlendMode.srcIn),
+                  width: 22.r,
+                  height: 22.r,
+                ),
+                SizedBox(
+                  height: 5.r,
+                ),
+                Text(
+                  'Calendar',
+                  style: TextStyle(
+                    color: (tabIndex == 1)
+                        ? AppColors.current.primaryColor
+                        : AppColors.current.primaryTextColor,
+                    fontSize: 12,
+                  ),
+                ),
+              ],
             ),
-            onPressed: () {
+          ),
+          SizedBox(
+            width: 20.r,
+          ),
+          InkWell(
+            onTap: () {
               bottomBarCubit.setCurrentIndex(2);
             },
-          ),
-          IconButton(
-            icon: Icon(
-              Icons.people,
-              color: (tabIndex == 3) ? Colors.blue : Colors.white,
+            borderRadius: BorderRadius.circular(5.r),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Assets.images.clockIcon.svg(
+                  colorFilter: ColorFilter.mode(
+                      (tabIndex == 2)
+                          ? AppColors.current.primaryColor
+                          : AppColors.current.primaryTextColor,
+                      BlendMode.srcIn),
+                  width: 22.r,
+                  height: 22.r,
+                ),
+                SizedBox(
+                  height: 5.r,
+                ),
+                Text(
+                  'Focuses',
+                  style: TextStyle(
+                    color: (tabIndex == 2)
+                        ? AppColors.current.primaryColor
+                        : AppColors.current.primaryTextColor,
+                    fontSize: 12,
+                  ),
+                ),
+              ],
             ),
-            onPressed: () {
+          ),
+          InkWell(
+            onTap: () {
               bottomBarCubit.setCurrentIndex(3);
             },
+            borderRadius: BorderRadius.circular(5.r),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Assets.images.userIcon.svg(
+                  colorFilter: ColorFilter.mode(
+                      (tabIndex == 3)
+                          ? AppColors.current.primaryColor
+                          : AppColors.current.primaryTextColor,
+                      BlendMode.srcIn),
+                  width: 22.r,
+                  height: 22.r,
+                ),
+                SizedBox(
+                  height: 5.r,
+                ),
+                Text(
+                  'Profile',
+                  style: TextStyle(
+                    color: (tabIndex == 3)
+                        ? AppColors.current.primaryColor
+                        : AppColors.current.primaryTextColor,
+                    fontSize: 12,
+                  ),
+                ),
+              ],
+            ),
           ),
           const SizedBox(),
         ],

@@ -6,20 +6,16 @@ abstract class BaseScreenApp extends StatefulWidget {
 }
 
 abstract class BaseScreenAppState<T extends BaseScreenApp> extends State<T> {
-
   @override
   void initState() {
-    print("initState");
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
     AppColors.of(context);
-    print("Building BaseScreenApp");
     return buildScreen(context);
   }
 
   Widget buildScreen(BuildContext context);
 }
-

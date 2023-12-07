@@ -6,6 +6,7 @@ import 'package:minimalist_bloc_clean_architecture/presentation/screens/focuses/
 import 'package:minimalist_bloc_clean_architecture/presentation/screens/home/home.dart';
 import 'package:minimalist_bloc_clean_architecture/presentation/screens/profile/profile.dart';
 import 'package:minimalist_bloc_clean_architecture/presentation/shared_view/bottom_bar/bottom_bar.dart';
+import 'package:minimalist_bloc_clean_architecture/resource/style/app_colors.dart';
 
 /// Main Screen of the app.
 ///
@@ -32,16 +33,16 @@ class _MainScreenState extends BaseScreenAppState<MainScreen> {
         return Scaffold(
           body: mainTabsApp.elementAt(bottomBarState.currentIndex),
           floatingActionButton: FloatingActionButton(
+            backgroundColor: AppColors.current.primaryColor,
+            foregroundColor: Colors.white,
             shape: const CircleBorder(),
             onPressed: () {
               //code to execute on button press
             },
             child: const Icon(Icons.send),
           ),
-          floatingActionButtonLocation:
-              FloatingActionButtonLocation.centerDocked,
-          bottomNavigationBar:
-              BottomBarApp(tabIndex: bottomBarState.currentIndex),
+          floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+          bottomNavigationBar: BottomBarApp(tabIndex: bottomBarState.currentIndex),
         );
       },
     );
