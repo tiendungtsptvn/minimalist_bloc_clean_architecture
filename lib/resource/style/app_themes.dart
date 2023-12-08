@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:minimalist_bloc_clean_architecture/resource/gen/fonts.gen.dart';
 import 'app_colors.dart';
 
 /// Define custom themes.
@@ -10,6 +11,7 @@ enum AppThemeType { light, dark }
 final lightTheme = ThemeData(
   brightness: Brightness.light,
   splashColor: Colors.transparent,
+  fontFamily: FontFamily.lato,
 )..addAppColor(
     AppThemeType.light,
     AppColors.lightThemeColor,
@@ -19,6 +21,7 @@ final lightTheme = ThemeData(
 final darkTheme = ThemeData(
   brightness: Brightness.dark,
   splashColor: Colors.transparent,
+  fontFamily: FontFamily.lato,
   scaffoldBackgroundColor: AppColors.darkThemeColor.primaryBackgroundColor,
 )..addAppColor(
     AppThemeType.dark,

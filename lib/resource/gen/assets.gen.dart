@@ -11,6 +11,54 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter/services.dart';
 
+class $AssetsFontsGen {
+  const $AssetsFontsGen();
+
+  /// File path: assets/fonts/Lato-Black.ttf
+  String get latoBlack => 'assets/fonts/Lato-Black.ttf';
+
+  /// File path: assets/fonts/Lato-BlackItalic.ttf
+  String get latoBlackItalic => 'assets/fonts/Lato-BlackItalic.ttf';
+
+  /// File path: assets/fonts/Lato-Bold.ttf
+  String get latoBold => 'assets/fonts/Lato-Bold.ttf';
+
+  /// File path: assets/fonts/Lato-BoldItalic.ttf
+  String get latoBoldItalic => 'assets/fonts/Lato-BoldItalic.ttf';
+
+  /// File path: assets/fonts/Lato-Italic.ttf
+  String get latoItalic => 'assets/fonts/Lato-Italic.ttf';
+
+  /// File path: assets/fonts/Lato-Light.ttf
+  String get latoLight => 'assets/fonts/Lato-Light.ttf';
+
+  /// File path: assets/fonts/Lato-LightItalic.ttf
+  String get latoLightItalic => 'assets/fonts/Lato-LightItalic.ttf';
+
+  /// File path: assets/fonts/Lato-Regular.ttf
+  String get latoRegular => 'assets/fonts/Lato-Regular.ttf';
+
+  /// File path: assets/fonts/Lato-Thin.ttf
+  String get latoThin => 'assets/fonts/Lato-Thin.ttf';
+
+  /// File path: assets/fonts/Lato-ThinItalic.ttf
+  String get latoThinItalic => 'assets/fonts/Lato-ThinItalic.ttf';
+
+  /// List of all assets
+  List<String> get values => [
+        latoBlack,
+        latoBlackItalic,
+        latoBold,
+        latoBoldItalic,
+        latoItalic,
+        latoLight,
+        latoLightItalic,
+        latoRegular,
+        latoThin,
+        latoThinItalic
+      ];
+}
+
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
@@ -74,6 +122,7 @@ class $AssetsImagesGen {
 class Assets {
   Assets._();
 
+  static const $AssetsFontsGen fonts = $AssetsFontsGen();
   static const $AssetsImagesGen images = $AssetsImagesGen();
 }
 
