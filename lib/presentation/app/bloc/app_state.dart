@@ -1,13 +1,23 @@
+import 'dart:ui';
+
 import 'package:minimalist_bloc_clean_architecture/base/bloc/bloc.dart';
+import 'package:minimalist_bloc_clean_architecture/resource/app_languages.dart';
 
-class AppState extends BaseStateApp {
+class GlobalAppState extends BaseStateApp {
   final bool isDarkTheme;
-  const AppState({required this.isDarkTheme});
+  final Locale currentLocale;
+  const GlobalAppState({
+    this.isDarkTheme = false,
+    this.currentLocale = AppLanguages.fallbackLocale,
+  });
 
-  copyWith({bool? isDarkTheme}) {
-    return AppState(isDarkTheme: isDarkTheme ?? this.isDarkTheme);
+  copyWith({bool? isDarkTheme, Locale? currentLocale}) {
+    return GlobalAppState(
+      isDarkTheme: isDarkTheme ?? this.isDarkTheme,
+      currentLocale: currentLocale ?? this.currentLocale,
+    );
   }
 
   @override
-  List<Object?> get props => [isDarkTheme];
+  List<Object?> get props => [isDarkTheme, currentLocale];
 }

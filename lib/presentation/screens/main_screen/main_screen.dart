@@ -1,6 +1,8 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:minimalist_bloc_clean_architecture/base/widgets/base_screen_app.dart';
+import 'package:minimalist_bloc_clean_architecture/presentation/app/bloc/app_bloc.dart';
 import 'package:minimalist_bloc_clean_architecture/presentation/screens/calendar/calendar.dart';
 import 'package:minimalist_bloc_clean_architecture/presentation/screens/focuses/focuses.dart';
 import 'package:minimalist_bloc_clean_architecture/presentation/screens/home/home.dart';
@@ -26,6 +28,14 @@ final mainTabsApp = [
 ];
 
 class _MainScreenState extends BaseScreenAppState<MainScreen> {
+
+
+  @override
+  void didChangeDependencies() {
+    ReadContext(context).read<GlobalAppCubit>().initLocale(contextSetLocale: context.setLocale);
+    super.didChangeDependencies();
+  }
+
   @override
   Widget buildScreen(BuildContext context) {
     return BlocBuilder<BottomBarCubit, BottomBarState>(

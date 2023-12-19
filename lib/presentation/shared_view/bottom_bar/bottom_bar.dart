@@ -1,8 +1,10 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:minimalist_bloc_clean_architecture/presentation/shared_view/bottom_bar/bottom_bar.dart';
 import 'package:minimalist_bloc_clean_architecture/resource/gen/assets.gen.dart';
+import 'package:minimalist_bloc_clean_architecture/resource/gen/locale_keys.g.dart';
 import 'package:minimalist_bloc_clean_architecture/resource/style/app_colors.dart';
 
 export 'bloc/bottom_bar_bloc.dart';
@@ -47,7 +49,7 @@ class BottomBarApp extends StatelessWidget {
                   height: 5.r,
                 ),
                 Text(
-                  'Home',
+                  LocaleKeys.home.tr(),
                   style: TextStyle(
                     color: (tabIndex == 0)
                         ? AppColors.current.primaryColor
@@ -79,7 +81,7 @@ class BottomBarApp extends StatelessWidget {
                   height: 5.r,
                 ),
                 Text(
-                  'Calendar',
+                  LocaleKeys.calendar.tr(),
                   style: TextStyle(
                     color: (tabIndex == 1)
                         ? AppColors.current.primaryColor
@@ -114,7 +116,7 @@ class BottomBarApp extends StatelessWidget {
                   height: 5.r,
                 ),
                 Text(
-                  'Focuses',
+                  LocaleKeys.focuses.tr(),
                   style: TextStyle(
                     color: (tabIndex == 2)
                         ? AppColors.current.primaryColor
@@ -146,7 +148,7 @@ class BottomBarApp extends StatelessWidget {
                   height: 5.r,
                 ),
                 Text(
-                  'Profile',
+                  LocaleKeys.profile.tr(),
                   style: TextStyle(
                     color: (tabIndex == 3)
                         ? AppColors.current.primaryColor

@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:minimalist_bloc_clean_architecture/base/widgets/widget.dart';
 import 'package:minimalist_bloc_clean_architecture/presentation/app/bloc/app_bloc.dart';
@@ -23,10 +24,24 @@ class _ProfileScreenState extends BaseScreenAppState<ProfileScreen> {
             height: 40,
           ),
           ElevatedButton(
-              onPressed: () {
-                BlocProvider.of<AppBloc>(context, listen: false).changeTheme();
-              },
-              child: const Text("Change theme"))
+            onPressed: () {
+              BlocProvider.of<GlobalAppCubit>(context, listen: false).changeTheme();
+            },
+            child: const Text("Change theme"),
+          ),
+          const SizedBox(
+            height: 10,
+          ),
+          ElevatedButton(
+            onPressed: () {
+              if(context.locale.languageCode == 'en'){
+                ReadContext(context).read<GlobalAppCubit>().changeAppLocale(const Locale('vi', 'VN'));
+              }else{
+                ReadContext(context).read<GlobalAppCubit>().changeAppLocale(const Locale('en', 'US'));
+              }
+            },
+            child: const Text("Change language"),
+          ),
         ],
       ),
     );
