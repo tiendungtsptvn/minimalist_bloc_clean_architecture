@@ -7,9 +7,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:minimalist_bloc_clean_architecture/app.dart';
-
-import 'package:minimalist_bloc_clean_architecture/main.dart';
+import 'package:minimalist_bloc_clean_architecture/presentation/app/app.dart';
 
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
