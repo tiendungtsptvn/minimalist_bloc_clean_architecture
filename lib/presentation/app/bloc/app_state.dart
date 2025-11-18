@@ -1,6 +1,6 @@
 import 'dart:ui';
 
-import 'package:minimalist_bloc_clean_architecture/base/bloc/bloc.dart';
+import 'package:minimalist_bloc_clean_architecture/core/base/bloc/bloc.dart';
 import 'package:minimalist_bloc_clean_architecture/resource/app_languages.dart';
 
 class GlobalAppState extends BaseStateApp {

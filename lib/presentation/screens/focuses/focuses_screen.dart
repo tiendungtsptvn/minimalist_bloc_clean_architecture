@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:minimalist_bloc_clean_architecture/base/widgets/widget.dart';
+import 'package:minimalist_bloc_clean_architecture/core/base/widgets/widget.dart';
 
 class FocusesScreen extends BaseScreenApp {
   const FocusesScreen({super.key});

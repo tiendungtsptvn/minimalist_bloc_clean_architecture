@@ -1,8 +1,8 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:minimalist_bloc_clean_architecture/base/widgets/widget.dart';
-import 'package:minimalist_bloc_clean_architecture/presentation/app/bloc/app_bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:minimalist_bloc_clean_architecture/core/base/widgets/widget.dart';
+import 'package:minimalist_bloc_clean_architecture/presentation/app/bloc/app_bloc.dart';
 
 class ProfileScreen extends BaseScreenApp {
   const ProfileScreen({super.key});

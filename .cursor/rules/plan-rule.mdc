@@ -1,0 +1,92 @@
+---
+alwaysApply: false
+---
+# Quy tắc tạo Plan cho dự án
+
+## Nguyên tắc chung
+
+Khi được yêu cầu tạo plan, bạn PHẢI tuân thủ các quy tắc sau:
+
+### 1. Bám sát yêu cầu và quy tắc dự án
+
+- Plan phải bám sát yêu cầu đặt ra, không được tự ý thêm/bớt nội dung không liên quan.
+- Tuân thủ nghiêm ngặt các quy tắc đã có sẵn trong dự án về:
+  - Kiến trúc triển khai
+  - Design pattern
+  - State management
+  - Cấu trúc thư mục
+  - Quy tắc đặt tên
+  - Dependency injection
+
+### 2. Tham khảo codebase và best practices
+
+- **Tham khảo codebase hiện tại**: Trước khi tạo plan, hãy xem xét cách triển khai đã có từ trước trong dự án để đảm bảo tính nhất quán.
+- **Áp dụng best practices**: 
+  - Tham khảo best practices của Flutter từ tài liệu chính thức và cộng đồng
+  - Tham khảo quy tắc trong `@flutter-rule.mdc` nếu có
+  - Tuân thủ các nguyên tắc trong `analysis_options.yaml`
+- **Phát hiện và đề xuất**: 
+  - Nếu phát hiện codebase có vấn đề chưa chuẩn theo best practice, hãy:
+    1. Liệt kê các vấn đề phát hiện được
+    2. Đưa ra đề xuất chỉnh sửa cụ thể
+    3. **HỎI LẠI người dùng** xem có muốn sửa đổi hay không
+    4. Chỉ tiếp tục viết plan sau khi có phản hồi từ người dùng
+
+### 3. Format của Plan
+
+- **Đánh số các bước**: Mỗi bước trong plan phải được đánh số rõ ràng (1, 2, 3, ...)
+- **Checkbox cho mỗi task**: Mỗi task/subtask phải có checkbox markdown để theo dõi tiến độ:
+  - `- [ ]` cho task chưa hoàn thành
+  - `- [x]` cho task đã hoàn thành
+- **Mô tả rõ ràng**: Mỗi bước phải có mô tả cụ thể, có thể bao gồm:
+  - File paths cần chỉnh sửa
+  - Code snippets minh họa (nếu cần)
+  - Dependencies giữa các bước
+
+### 4. Không tự động thực hiện Plan
+
+- **KHÔNG được phép** thực hiện plan ngay sau khi tạo xong
+- Chỉ thực hiện plan khi được người dùng **yêu cầu rõ ràng** (ví dụ: "Implement the plan", "Thực hiện plan", "Execute the plan")
+- Sau khi tạo plan, chỉ cần thông báo cho người dùng biết plan đã được tạo và chờ xác nhận
+
+### 5. Lưu ý khi thực hiện Plan
+
+Trong plan, phải có note rõ ràng:
+
+> **Lưu ý khi thực hiện**: 
+> - Kiểm tra lại một lượt xem bước nào đã hoàn thành (checkbox đã được đánh dấu `[x]`)
+> - Chỉ tiếp tục thực hiện các bước chưa hoàn thành
+> - Cập nhật checkbox trong plan file sau khi hoàn thành mỗi bước
+> - Nếu có lỗi phát sinh, dừng lại và báo cáo trước khi tiếp tục
+
+### 6. Cấu trúc Plan file
+
+Plan nên được lưu trong `.cursor/plan/` với format markdown và có cấu trúc:
+
+```markdown
+# Tên Plan
+
+## 1. Bước đầu tiên
+- [ ] Task 1.1
+- [ ] Task 1.2
+
+## 2. Bước thứ hai
+- [ ] Task 2.1
+- [ ] Task 2.2
+
+## Lưu ý khi thực hiện
+- Kiểm tra lại các bước đã hoàn thành
+- ...
+```
+
+## Ví dụ workflow
+
+1. Người dùng yêu cầu: "Tạo plan để refactor API client"
+2. AI thực hiện:
+   - Đọc codebase hiện tại (API client, các file liên quan)
+   - Kiểm tra best practices và quy tắc dự án
+   - Nếu phát hiện vấn đề → hỏi người dùng
+   - Tạo plan với checkbox và lưu vào `.cursor/plan/`
+   - Thông báo plan đã được tạo, **KHÔNG tự động thực hiện**
+3. Người dùng xem plan và yêu cầu: "Implement the plan"
+4. AI mới bắt đầu thực hiện từng bước, cập nhật checkbox khi hoàn thành

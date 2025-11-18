@@ -1,7 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:minimalist_bloc_clean_architecture/base/widgets/base_screen_app.dart';
+import 'package:minimalist_bloc_clean_architecture/core/base/widgets/base_screen_app.dart';
 import 'package:minimalist_bloc_clean_architecture/presentation/app/bloc/app_bloc.dart';
 import 'package:minimalist_bloc_clean_architecture/presentation/screens/calendar/calendar.dart';
 import 'package:minimalist_bloc_clean_architecture/presentation/screens/focuses/focuses.dart';

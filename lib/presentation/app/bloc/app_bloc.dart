@@ -1,7 +1,7 @@
 import 'dart:io';
 import 'dart:ui';
 
-import 'package:minimalist_bloc_clean_architecture/base/bloc/bloc.dart';
+import 'package:minimalist_bloc_clean_architecture/core/base/bloc/bloc.dart';
 import 'package:minimalist_bloc_clean_architecture/constant/string.dart';
 import 'package:minimalist_bloc_clean_architecture/resource/style/app_themes.dart';
 import 'package:minimalist_bloc_clean_architecture/utils/app_utils.dart';
