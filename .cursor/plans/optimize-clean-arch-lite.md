@@ -65,7 +65,7 @@
 > **Quan trọng**: 
 > - Kiểm tra lại một lượt xem bước nào đã hoàn thành (checkbox đã được đánh dấu `[x]`)
 > - Chỉ tiếp tục thực hiện các bước chưa hoàn thành
-> - Cập nhật checkbox trong plan file (`.cursor/plan/optimize-clean-arch-lite.md`) sau khi hoàn thành mỗi bước
+> - Cập nhật checkbox trong plan file (`.cursor/plans/optimize-clean-arch-lite.md`) sau khi hoàn thành mỗi bước
 > - Nếu có lỗi phát sinh, dừng lại và báo cáo trước khi tiếp tục
 > - Đảm bảo mỗi bước đều được test và verify trước khi chuyển sang bước tiếp theo
 > - Tuân thủ các quy tắc trong `.cursor/rules/plan-rule.mdc` và `.cursor/rules/flutter-rule.mdc`
