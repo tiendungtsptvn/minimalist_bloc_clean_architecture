@@ -4,27 +4,16 @@ class AppLanguages {
   const AppLanguages._();
 
   /// List of supported locales.
-  /// To add a new language: add Locale here and create corresponding JSON file.
+  /// To add a new language: add Locale here and create corresponding .arb file in lib/l10n/.
   static const supportedLocales = [
-    Locale('en', 'US'),
-    Locale('vi', 'VN'),
+    Locale('en', ''),
+    Locale('vi', ''),
     // Add new language here
   ];
 
-  /// Path to translation files directory.
-  static const path = 'assets/languages';
-
   /// Default locale when no matching locale is found.
-  static const fallbackLocale = Locale('en', 'US');
+  static const fallbackLocale = Locale('en', '');
 
-  /// Get JSON file name from Locale.
-  /// Format: "en-US.json" or "vi-VN.json"
-  static String getFileName(Locale locale) {
-    final countryCode = locale.countryCode ?? '';
-    return countryCode.isEmpty
-        ? '${locale.languageCode}.json'
-        : '${locale.languageCode}-$countryCode.json';
-  }
 
   /// Check if locale is supported.
   static bool isSupported(Locale locale) {

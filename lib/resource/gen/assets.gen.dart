@@ -69,73 +69,47 @@ class $AssetsImagesGen {
   $AssetsImagesSolidGen get solid => const $AssetsImagesSolidGen();
 }
 
-class $AssetsLanguagesGen {
-  const $AssetsLanguagesGen();
-
-  /// File path: assets/languages/en-US.json
-  String get enUS => 'assets/languages/en-US.json';
-
-  /// File path: assets/languages/vi-VN.json
-  String get viVN => 'assets/languages/vi-VN.json';
-
-  /// List of all assets
-  List<String> get values => [enUS, viVN];
-}
-
 class $AssetsImagesSolidGen {
   const $AssetsImagesSolidGen();
 
   /// File path: assets/images/solid/add_icon.svg
-  SvgGenImage get addIcon =>
-      const SvgGenImage('assets/images/solid/add_icon.svg');
+  SvgGenImage get addIcon => const SvgGenImage('assets/images/solid/add_icon.svg');
 
   /// File path: assets/images/solid/calendar_icon.svg
-  SvgGenImage get calendarIcon =>
-      const SvgGenImage('assets/images/solid/calendar_icon.svg');
+  SvgGenImage get calendarIcon => const SvgGenImage('assets/images/solid/calendar_icon.svg');
 
   /// File path: assets/images/solid/camera_icon.svg
-  SvgGenImage get cameraIcon =>
-      const SvgGenImage('assets/images/solid/camera_icon.svg');
+  SvgGenImage get cameraIcon => const SvgGenImage('assets/images/solid/camera_icon.svg');
 
   /// File path: assets/images/solid/clock_icon.svg
-  SvgGenImage get clockIcon =>
-      const SvgGenImage('assets/images/solid/clock_icon.svg');
+  SvgGenImage get clockIcon => const SvgGenImage('assets/images/solid/clock_icon.svg');
 
   /// File path: assets/images/solid/flash_icon.svg
-  SvgGenImage get flashIcon =>
-      const SvgGenImage('assets/images/solid/flash_icon.svg');
+  SvgGenImage get flashIcon => const SvgGenImage('assets/images/solid/flash_icon.svg');
 
   /// File path: assets/images/solid/home_icon.svg
-  SvgGenImage get homeIcon =>
-      const SvgGenImage('assets/images/solid/home_icon.svg');
+  SvgGenImage get homeIcon => const SvgGenImage('assets/images/solid/home_icon.svg');
 
   /// File path: assets/images/solid/info_circle_icon.svg
-  SvgGenImage get infoCircleIcon =>
-      const SvgGenImage('assets/images/solid/info_circle_icon.svg');
+  SvgGenImage get infoCircleIcon => const SvgGenImage('assets/images/solid/info_circle_icon.svg');
 
   /// File path: assets/images/solid/key_icon.svg
-  SvgGenImage get keyIcon =>
-      const SvgGenImage('assets/images/solid/key_icon.svg');
+  SvgGenImage get keyIcon => const SvgGenImage('assets/images/solid/key_icon.svg');
 
   /// File path: assets/images/solid/like_icon.svg
-  SvgGenImage get likeIcon =>
-      const SvgGenImage('assets/images/solid/like_icon.svg');
+  SvgGenImage get likeIcon => const SvgGenImage('assets/images/solid/like_icon.svg');
 
   /// File path: assets/images/solid/logout_icon.svg
-  SvgGenImage get logoutIcon =>
-      const SvgGenImage('assets/images/solid/logout_icon.svg');
+  SvgGenImage get logoutIcon => const SvgGenImage('assets/images/solid/logout_icon.svg');
 
   /// File path: assets/images/solid/menu_icon.svg
-  SvgGenImage get menuIcon =>
-      const SvgGenImage('assets/images/solid/menu_icon.svg');
+  SvgGenImage get menuIcon => const SvgGenImage('assets/images/solid/menu_icon.svg');
 
   /// File path: assets/images/solid/setting_icon.svg
-  SvgGenImage get settingIcon =>
-      const SvgGenImage('assets/images/solid/setting_icon.svg');
+  SvgGenImage get settingIcon => const SvgGenImage('assets/images/solid/setting_icon.svg');
 
   /// File path: assets/images/solid/user_icon.svg
-  SvgGenImage get userIcon =>
-      const SvgGenImage('assets/images/solid/user_icon.svg');
+  SvgGenImage get userIcon => const SvgGenImage('assets/images/solid/user_icon.svg');
 
   /// List of all assets
   List<SvgGenImage> get values => [
@@ -160,7 +134,6 @@ class Assets {
 
   static const $AssetsFontsGen fonts = $AssetsFontsGen();
   static const $AssetsImagesGen images = $AssetsImagesGen();
-  static const $AssetsLanguagesGen languages = $AssetsLanguagesGen();
 }
 
 class SvgGenImage {
@@ -230,8 +203,7 @@ class SvgGenImage {
       placeholderBuilder: placeholderBuilder,
       semanticsLabel: semanticsLabel,
       excludeFromSemantics: excludeFromSemantics,
-      colorFilter: colorFilter ??
-          (color == null ? null : ColorFilter.mode(color, colorBlendMode)),
+      colorFilter: colorFilter ?? (color == null ? null : ColorFilter.mode(color, colorBlendMode)),
       clipBehavior: clipBehavior,
       cacheColorFilter: cacheColorFilter,
     );

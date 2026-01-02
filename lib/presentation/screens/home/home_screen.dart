@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../../l10n/generated/l10n.dart';
 import '../../app/base/widgets/base_screen_app.dart';
 
 class HomeScreen extends AppStateful {
@@ -12,8 +13,8 @@ class HomeScreen extends AppStateful {
 class _HomeScreenState extends AppStatefulState<HomeScreen> {
   @override
   Widget buildScreen(BuildContext context) {
-    return const Center(
-      child: Text("Home Screen"),
+    return Center(
+      child: Text(AppLocale.current.home),
     );
   }
 }

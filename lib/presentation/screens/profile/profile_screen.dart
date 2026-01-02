@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:minimalist_bloc_clean_architecture/l10n/generated/l10n.dart';
 
 import '../../app/base/widgets/base_screen_app.dart';
 import '../../app/locale/locale_cubit.dart';
@@ -20,7 +21,7 @@ class _ProfileScreenState extends AppStatefulState<ProfileScreen> {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          const Text("Profile Screen"),
+          Text(AppLocale.current.profile),
           const SizedBox(
             height: 40,
           ),

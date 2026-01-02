@@ -30,6 +30,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_localizations:
+    sdk: flutter
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -45,8 +47,6 @@ dependencies:
   # A Dart package that helps to implement value based equality without
   # needing to explicitly override == and hashCode.
   equatable: 2.0.5
-  # Lib for easy translations for many languages.
-  easy_localization: 3.0.8
   # Wraps platform-specific persistent storage for simple data.
   shared_preferences: 2.2.2
   # A powerful HTTP networking package for Dart/Flutter.
@@ -64,18 +64,10 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  flutter_lints: 6.0.0
   flutter_gen_runner: 5.12.0
   build_runner: 2.10.4
-
-  # The "flutter_lints" package below contains a set of recommended lints to
-  # encourage good coding practices. The lint set provided by the package is
-  # activated in the `analysis_options.yaml` file located at the root of your
-  # package. See that file for information about deactivating specific lint
-  # rules and activating additional ones.
-  flutter_lints: ^2.0.0
-
-# For information on the generic Dart part of this file, see the
-# following page: https://dart.dev/tools/pub/pubspec
+  intl_utils: 2.8.13
 
 flutter_gen:
   output: lib/resource/gen/ # Optional (default: lib/gen/)
@@ -87,17 +79,14 @@ flutter_gen:
 
 # The following section is specific to Flutter packages.
 flutter:
+  generate: true
 
-  # The following line ensures that the Material Icons font is
-  # included with your application, so that you can use the icons in
-  # the material Icons class.
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/images/solid/
     - assets/fonts/
-    - assets/languages/
   fonts:
     - family: Lato
       fonts:
@@ -126,3 +115,10 @@ flutter:
         - asset: assets/fonts/Lato-BlackItalic.ttf
           weight: 900
           style: italic
+
+flutter_intl:
+  enabled: true
+  main_locale: vi
+  class_name: AppLocale
+  arb_dir: lib/l10n
+  output_dir: lib/l10n/generated
