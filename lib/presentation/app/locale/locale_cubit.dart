@@ -1,10 +1,10 @@
 import 'dart:developer';
 import 'dart:io';
 import 'dart:ui';
-import 'package:minimalist_bloc_clean_architecture/core/base/bloc/bloc.dart';
 import 'package:minimalist_bloc_clean_architecture/data/repositories/repositories.dart';
 import 'package:minimalist_bloc_clean_architecture/resource/app_languages.dart';
 import 'package:minimalist_bloc_clean_architecture/utils/app_utils.dart';
+import '../base/bloc/base_cubit_app.dart';
 import 'locale_state.dart';
 
 export 'locale_state.dart';

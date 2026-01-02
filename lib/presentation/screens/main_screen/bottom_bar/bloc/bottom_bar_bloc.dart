@@ -1,4 +1,4 @@
-import 'package:minimalist_bloc_clean_architecture/core/base/bloc/bloc.dart';
+import '../../../../app/base/bloc/base_cubit_app.dart';
 import 'bottom_bar_state.dart';
 
 export 'bottom_bar_state.dart';

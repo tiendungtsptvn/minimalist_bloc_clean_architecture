@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:minimalist_bloc_clean_architecture/core/base/widgets/widget.dart';
+
+import '../../app/base/widgets/base_screen_app.dart';
 
 class CalendarScreen extends AppStateful {
   const CalendarScreen({super.key});

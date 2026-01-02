@@ -1,5 +1,6 @@
-import 'package:minimalist_bloc_clean_architecture/core/base/bloc/bloc.dart';
 import 'package:minimalist_bloc_clean_architecture/resource/style/app_themes.dart';
+
+import '../base/bloc/base_state_app.dart';
 
 class ThemeState extends BaseStateApp {
   final AppThemeType currentTheme;

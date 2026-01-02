@@ -1,6 +1,6 @@
-import 'package:minimalist_bloc_clean_architecture/core/base/bloc/bloc.dart';
 import 'package:minimalist_bloc_clean_architecture/data/repositories/repositories.dart';
 import 'package:minimalist_bloc_clean_architecture/resource/style/app_themes.dart';
+import '../base/bloc/base_cubit_app.dart';
 import 'theme_state.dart';
 
 export 'theme_state.dart';

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:minimalist_bloc_clean_architecture/core/base/widgets/base_screen_app.dart';
 import 'package:minimalist_bloc_clean_architecture/presentation/app/locale/locale_cubit.dart';
 import 'package:minimalist_bloc_clean_architecture/presentation/app/theme/theme_cubit.dart';
 import 'package:minimalist_bloc_clean_architecture/presentation/screens/calendar/calendar.dart';
@@ -9,6 +8,7 @@ import 'package:minimalist_bloc_clean_architecture/presentation/screens/home/hom
 import 'package:minimalist_bloc_clean_architecture/presentation/screens/profile/profile.dart';
 import 'package:minimalist_bloc_clean_architecture/resource/style/app_colors.dart';
 
+import '../../app/base/widgets/base_screen_app.dart';
 import 'bottom_bar/bottom_bar.dart';
 
 /// Main Screen of the app.

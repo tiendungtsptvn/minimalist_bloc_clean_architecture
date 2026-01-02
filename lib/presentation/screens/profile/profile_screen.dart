@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:minimalist_bloc_clean_architecture/core/base/widgets/widget.dart';
 
+import '../../app/base/widgets/base_screen_app.dart';
 import '../../app/locale/locale_cubit.dart';
 import '../../app/theme/theme_cubit.dart';
 
