@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:minimalist_bloc_clean_architecture/l10n/generated/l10n.dart';
+import 'package:minimalist_bloc_clean_architecture/presentation/app/bloc/app_bloc.dart';
 
 import '../../app/base/widgets/base_screen_app.dart';
-import '../../app/locale/locale_cubit.dart';
-import '../../app/theme/theme_cubit.dart';
 
 class ProfileScreen extends AppStateful {
   const ProfileScreen({super.key});
@@ -27,7 +26,7 @@ class _ProfileScreenState extends AppStatefulState<ProfileScreen> {
           ),
           ElevatedButton(
             onPressed: () {
-              context.read<ThemeCubit>().changeTheme();
+              context.read<GlobalAppCubit>().changeTheme();
             },
             child: const Text("Change theme"),
           ),
@@ -36,7 +35,7 @@ class _ProfileScreenState extends AppStatefulState<ProfileScreen> {
           ),
           ElevatedButton(
             onPressed: () {
-              context.read<LocaleCubit>().switchLanguage();
+              context.read<GlobalAppCubit>().switchLanguage();
             },
             child: const Text("Change language"),
           ),

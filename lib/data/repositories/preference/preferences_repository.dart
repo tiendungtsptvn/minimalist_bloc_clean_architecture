@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+import 'package:minimalist_bloc_clean_architecture/constant/string.dart';
 import 'package:minimalist_bloc_clean_architecture/resource/app_languages.dart';
 import 'package:minimalist_bloc_clean_architecture/resource/style/app_themes.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -7,8 +8,6 @@ import 'package:shared_preferences/shared_preferences.dart';
 /// Repository for managing app preferences using SharedPreferences.
 class PreferencesRepository {
   final SharedPreferences _prefs;
-  static const String _localeKey = 'app_locale';
-  static const String _themeKey = 'app_theme';
 
   PreferencesRepository(this._prefs);
 
@@ -16,7 +15,7 @@ class PreferencesRepository {
   /// Returns null if no locale is saved or locale is invalid/not supported.
   Locale? getLocale() {
     try {
-      final localeString = _prefs.getString(_localeKey);
+      final localeString = _prefs.getString(AppStrings.localeKey);
       if (localeString == null) return null;
 
       // Format: "en_US" or "vi_VN"
@@ -56,7 +55,7 @@ class PreferencesRepository {
       final localeString = locale.countryCode != null
           ? '${locale.languageCode}_${locale.countryCode}'
           : locale.languageCode;
-      await _prefs.setString(_localeKey, localeString);
+      await _prefs.setString(AppStrings.localeKey, localeString);
     } catch (e) {
       // Re-throw ArgumentError so caller knows
       if (e is ArgumentError) rethrow;
@@ -66,14 +65,14 @@ class PreferencesRepository {
 
   /// Get saved theme from SharedPreferences.
   /// Returns null if no theme is saved or theme is invalid.
-  AppThemeType? getTheme() {
+  AppTheme? getTheme() {
     try {
-      final themeString = _prefs.getString(_themeKey);
+      final themeString = _prefs.getString(AppStrings.themeKey);
       if (themeString == null) return null;
 
-      return AppThemeType.values.firstWhere(
+      return AppTheme.values.firstWhere(
         (type) => type.name == themeString,
-        orElse: () => AppThemeType.light,
+        orElse: () => AppTheme.light,
       );
     } catch (_) {
       return null;
@@ -81,9 +80,9 @@ class PreferencesRepository {
   }
 
   /// Save theme to SharedPreferences.
-  Future<void> saveTheme(AppThemeType themeType) async {
+  Future<void> saveTheme(AppTheme themeType) async {
     try {
-      await _prefs.setString(_themeKey, themeType.name);
+      await _prefs.setString(AppStrings.themeKey, themeType.name);
     } catch (_) {
       // Ignore errors
     }

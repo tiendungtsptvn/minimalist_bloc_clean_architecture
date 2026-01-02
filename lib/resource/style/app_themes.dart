@@ -3,7 +3,7 @@ import 'package:minimalist_bloc_clean_architecture/resource/gen/fonts.gen.dart';
 import 'app_colors.dart';
 
 /// Theme types supported by the app.
-enum AppThemeType {
+enum AppTheme {
   light,
   dark,
   // Add new theme types here
@@ -11,12 +11,12 @@ enum AppThemeType {
 
 /// Theme registry for managing all app themes.
 class AppThemeRegistry {
-  static final Map<AppThemeType, ThemeData> _themes = {};
-  static final Map<AppThemeType, AppColors> _colors = {};
+  static final Map<AppTheme, ThemeData> _themes = {};
+  static final Map<AppTheme, AppColors> _colors = {};
 
   /// Register a theme.
   static void registerTheme(
-    AppThemeType type,
+    AppTheme type,
     ThemeData themeData,
     AppColors appColors,
   ) {
@@ -25,17 +25,17 @@ class AppThemeRegistry {
   }
 
   /// Get theme data by type.
-  static ThemeData? getTheme(AppThemeType type) {
+  static ThemeData? getTheme(AppTheme type) {
     return _themes[type];
   }
 
   /// Get app colors by type.
-  static AppColors? getColors(AppThemeType type) {
+  static AppColors? getColors(AppTheme type) {
     return _colors[type];
   }
 
   /// Get all registered theme types.
-  static List<AppThemeType> getAvailableThemes() {
+  static List<AppTheme> getAvailableThemes() {
     return _themes.keys.toList();
   }
 
@@ -56,16 +56,16 @@ class AppThemeRegistry {
       scaffoldBackgroundColor: AppColors.darkThemeColor.primaryBackgroundColor,
     );
 
-    registerTheme(AppThemeType.light, lightTheme, AppColors.lightThemeColor);
-    registerTheme(AppThemeType.dark, darkTheme, AppColors.darkThemeColor);
+    registerTheme(AppTheme.light, lightTheme, AppColors.lightThemeColor);
+    registerTheme(AppTheme.dark, darkTheme, AppColors.darkThemeColor);
   }
 }
 
 extension ThemeDataExtensions on ThemeData {
-  static final Map<AppThemeType, AppColors> _appColorMap = {};
+  static final Map<AppTheme, AppColors> _appColorMap = {};
 
   /// Add app color for new theme.
-  void addAppColor(AppThemeType type, AppColors appColor) {
+  void addAppColor(AppTheme type, AppColors appColor) {
     _appColorMap[type] = appColor;
   }
 
@@ -78,5 +78,5 @@ extension ThemeDataExtensions on ThemeData {
 
 class AppThemeSetting {
   const AppThemeSetting._();
-  static AppThemeType currentAppThemeType = AppThemeType.light;
+  static AppTheme currentAppThemeType = AppTheme.light;
 }

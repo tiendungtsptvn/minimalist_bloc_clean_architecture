@@ -4,4 +4,6 @@ class AppStrings {
   static const String appName = "Minimalist Bloc Clean Architecture";
   static const String currentLanguageCodeApp = "current_language_code_app";
   static const String currentCountryCodeApp = "current_country_code_app";
+  static const String localeKey = 'app_locale';
+  static const String themeKey = 'app_theme';
 }

@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:minimalist_bloc_clean_architecture/presentation/app/locale/locale_cubit.dart';
-import 'package:minimalist_bloc_clean_architecture/presentation/app/theme/theme_cubit.dart';
 import 'package:minimalist_bloc_clean_architecture/presentation/screens/calendar/calendar.dart';
 import 'package:minimalist_bloc_clean_architecture/presentation/screens/focuses/focuses.dart';
 import 'package:minimalist_bloc_clean_architecture/presentation/screens/home/home.dart';
@@ -44,8 +42,6 @@ class _MainScreenBodyState extends AppStatefulState<MainScreenBody> {
     _pageController = PageController(
       initialPage: MainTabType.home.tabValue,
     );
-    context.read<LocaleCubit>().initLocale();
-    context.read<ThemeCubit>().initTheme();
   }
 
   @override

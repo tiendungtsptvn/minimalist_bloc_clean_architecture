@@ -1,7 +1,6 @@
 import 'package:get_it/get_it.dart';
 import 'package:minimalist_bloc_clean_architecture/data/repositories/repositories.dart';
-import 'package:minimalist_bloc_clean_architecture/presentation/app/locale/locale_cubit.dart';
-import 'package:minimalist_bloc_clean_architecture/presentation/app/theme/theme_cubit.dart';
+import 'package:minimalist_bloc_clean_architecture/presentation/app/bloc/app_bloc.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 /// Initialize dependency injection container.
@@ -17,11 +16,8 @@ Future<void> injectDependency() async {
     PreferencesRepository(getIt<SharedPreferences>()),
   );
 
-  // Register Cubits
-  getIt.registerFactory<ThemeCubit>(
-    () => ThemeCubit(getIt<PreferencesRepository>()),
-  );
-  getIt.registerFactory<LocaleCubit>(
-    () => LocaleCubit(getIt<PreferencesRepository>()),
+  // Register GlobalAppCubit
+  getIt.registerFactory<GlobalAppCubit>(
+    () => GlobalAppCubit(getIt<PreferencesRepository>()),
   );
 }
