@@ -7,7 +7,8 @@ import 'api_response.dart';
 
 class RestClientBase {
   static const Duration defaultTimeout = Duration(seconds: 15);
-  static const String formUrlEncodedContentType = 'application/json;charset=UTF-8';
+  static const String formUrlEncodedContentType =
+      'application/json;charset=UTF-8';
 
   RestClientBase(
     this.baseUrl,
@@ -149,7 +150,10 @@ class RestClientBase {
       CancelToken? cancelToken}) async {
     try {
       final Response<dynamic> response = await _dio.delete<dynamic>(path,
-          data: data, queryParameters: queryParameters, options: options, cancelToken: cancelToken);
+          data: data,
+          queryParameters: queryParameters,
+          options: options,
+          cancelToken: cancelToken);
 
       ApiResponse res = _mapResponse(response.data);
 
@@ -167,15 +171,22 @@ class RestClientBase {
       switch (e.type) {
         case DioExceptionType.connectionTimeout:
           return const ApiError(
-              code: 'CONNECT_TIMEOUT', message: 'CONNECT_TIMEOUT (timeout)', data: '');
+              code: 'CONNECT_TIMEOUT',
+              message: 'CONNECT_TIMEOUT (timeout)',
+              data: '');
         case DioExceptionType.sendTimeout:
           return const ApiError(
-              code: 'SEND_TIMEOUT', message: 'SEND_TIMEOUT (send timeout)', data: '');
+              code: 'SEND_TIMEOUT',
+              message: 'SEND_TIMEOUT (send timeout)',
+              data: '');
         case DioExceptionType.receiveTimeout:
           return const ApiError(
-              code: 'RECEIVE_TIMEOUT', message: 'RECEIVE_TIMEOUT (receive timeout)', data: '');
+              code: 'RECEIVE_TIMEOUT',
+              message: 'RECEIVE_TIMEOUT (receive timeout)',
+              data: '');
         case DioExceptionType.cancel:
-          return const ApiError(code: 'CANCEL', message: 'CANCEL (cancel)', data: '');
+          return const ApiError(
+              code: 'CANCEL', message: 'CANCEL (cancel)', data: '');
         case DioExceptionType.unknown:
           // https://github.com/flutterchina/dio/issues/817
           return const ApiError(
@@ -190,7 +201,8 @@ class RestClientBase {
           );
       }
     }
-    return ApiError(code: '${e.code}', message: '${e.message}', data: '${e.data}');
+    return ApiError(
+        code: '${e.code}', message: '${e.message}', data: '${e.data}');
   }
 
   ApiResponse _mapResponse(dynamic response) {

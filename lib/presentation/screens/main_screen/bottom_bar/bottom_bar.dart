@@ -2,10 +2,11 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:minimalist_bloc_clean_architecture/presentation/shared_view/bottom_bar/bottom_bar.dart';
 import 'package:minimalist_bloc_clean_architecture/resource/gen/assets.gen.dart';
 import 'package:minimalist_bloc_clean_architecture/resource/gen/locale_keys.g.dart';
 import 'package:minimalist_bloc_clean_architecture/resource/style/app_colors.dart';
+
+import 'bloc/bottom_bar_bloc.dart';
 
 export 'bloc/bottom_bar_bloc.dart';
 
@@ -15,14 +16,14 @@ class BottomBarApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final BottomBarCubit bottomBarCubit =
-        BlocProvider.of<BottomBarCubit>(context);
+    final bottomBarCubit = context.read<BottomBarCubit>();
     return BottomAppBar(
       height: 70.r,
       padding: EdgeInsets.symmetric(vertical: 10.r),
       color: AppColors.current.secondaryBackgroundColor,
       shape: const CircularNotchedRectangle(), // Shape of notch
-      notchMargin: 5.r, // Notch margin between floating button and bottom appbar
+      notchMargin:
+          5.r, // Notch margin between floating button and bottom appbar
       child: Row(
         mainAxisSize: MainAxisSize.max,
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -36,7 +37,7 @@ class BottomBarApp extends StatelessWidget {
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
-                Assets.images.homeIcon.svg(
+                Assets.images.solid.homeIcon.svg(
                   colorFilter: ColorFilter.mode(
                       (tabIndex == 0)
                           ? AppColors.current.primaryColor
@@ -68,7 +69,7 @@ class BottomBarApp extends StatelessWidget {
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
-                Assets.images.calendarIcon.svg(
+                Assets.images.solid.calendarIcon.svg(
                   colorFilter: ColorFilter.mode(
                       (tabIndex == 1)
                           ? AppColors.current.primaryColor
@@ -103,7 +104,7 @@ class BottomBarApp extends StatelessWidget {
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
-                Assets.images.clockIcon.svg(
+                Assets.images.solid.clockIcon.svg(
                   colorFilter: ColorFilter.mode(
                       (tabIndex == 2)
                           ? AppColors.current.primaryColor
@@ -135,7 +136,7 @@ class BottomBarApp extends StatelessWidget {
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
-                Assets.images.userIcon.svg(
+                Assets.images.solid.userIcon.svg(
                   colorFilter: ColorFilter.mode(
                       (tabIndex == 3)
                           ? AppColors.current.primaryColor

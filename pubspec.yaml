@@ -46,11 +46,13 @@ dependencies:
   # needing to explicitly override == and hashCode.
   equatable: 2.0.5
   # Lib for easy translations for many languages.
-  easy_localization: 3.0.3
+  easy_localization: 3.0.8
   # Wraps platform-specific persistent storage for simple data.
   shared_preferences: 2.2.2
   # A powerful HTTP networking package for Dart/Flutter.
   dio: 5.4.0
+  # A blazing-fast service locator for Dart and Flutter that makes dependency management simple.
+  get_it: 8.0.0
 
   ##_____________________________________ Libs for UI _______________________________________
   #An SVG rendering and widget library for Flutter.
@@ -62,8 +64,8 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  build_runner: 2.4.7
-  flutter_gen_runner: 5.3.2
+  flutter_gen_runner: 5.12.0
+  build_runner: 2.10.4
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
@@ -93,7 +95,7 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - assets/images/
+    - assets/images/solid/
     - assets/fonts/
     - assets/languages/
   fonts:

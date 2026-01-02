@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:minimalist_bloc_clean_architecture/resource/gen/fonts.gen.dart';
 
-
 /// Define all text styles used in this project.
 class AppTextStyles {
   static const TextStyle t24NormalRegular = TextStyle(

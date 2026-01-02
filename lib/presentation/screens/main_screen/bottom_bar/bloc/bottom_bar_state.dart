@@ -1,6 +1,6 @@
-import 'package:minimalist_bloc_clean_architecture/core/base/bloc/bloc.dart';
+import 'package:equatable/equatable.dart';
 
-class BottomBarState extends BaseStateApp {
+class BottomBarState extends Equatable {
   final int currentIndex;
   const BottomBarState(this.currentIndex);
 

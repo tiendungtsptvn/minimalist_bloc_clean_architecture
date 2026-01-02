@@ -1,23 +1,37 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:minimalist_bloc_clean_architecture/core/base/widgets/base_screen_app.dart';
-import 'package:minimalist_bloc_clean_architecture/presentation/app/bloc/app_bloc.dart';
+import 'package:minimalist_bloc_clean_architecture/presentation/app/locale/locale_cubit.dart';
+import 'package:minimalist_bloc_clean_architecture/presentation/app/theme/theme_cubit.dart';
 import 'package:minimalist_bloc_clean_architecture/presentation/screens/calendar/calendar.dart';
 import 'package:minimalist_bloc_clean_architecture/presentation/screens/focuses/focuses.dart';
 import 'package:minimalist_bloc_clean_architecture/presentation/screens/home/home.dart';
 import 'package:minimalist_bloc_clean_architecture/presentation/screens/profile/profile.dart';
-import 'package:minimalist_bloc_clean_architecture/presentation/shared_view/bottom_bar/bottom_bar.dart';
 import 'package:minimalist_bloc_clean_architecture/resource/style/app_colors.dart';
+
+import 'bottom_bar/bottom_bar.dart';
 
 /// Main Screen of the app.
 ///
 /// Include bottom app bar.
-class MainScreen extends BaseScreenApp {
+///
+class MainScreen extends AppStateless {
   const MainScreen({super.key});
 
   @override
-  State<MainScreen> createState() => _MainScreenState();
+  Widget buildScreen(BuildContext context) {
+    return BlocProvider(
+      create: (context) => BottomBarCubit(),
+      child: const MainScreenBody(),
+    );
+  }
+}
+
+class MainScreenBody extends AppStateful {
+  const MainScreenBody({super.key});
+
+  @override
+  State<MainScreenBody> createState() => _MainScreenBodyState();
 }
 
 final mainTabsApp = [
@@ -27,13 +41,25 @@ final mainTabsApp = [
   const ProfileScreen(),
 ];
 
-class _MainScreenState extends BaseScreenAppState<MainScreen> {
-
+class _MainScreenBodyState extends AppStatefulState<MainScreenBody> {
+  bool _localeInitialized = false;
+  bool _themeInitialized = false;
 
   @override
   void didChangeDependencies() {
-    ReadContext(context).read<GlobalAppCubit>().initLocale(contextSetLocale: context.setLocale);
     super.didChangeDependencies();
+
+    // Initialize locale only once after EasyLocalization is ready
+    if (!_localeInitialized) {
+      _localeInitialized = true;
+      context.read<LocaleCubit>().initLocale();
+    }
+
+    // Initialize theme only once
+    if (!_themeInitialized) {
+      _themeInitialized = true;
+      context.read<ThemeCubit>().initTheme();
+    }
   }
 
   @override
@@ -51,8 +77,10 @@ class _MainScreenState extends BaseScreenAppState<MainScreen> {
             },
             child: const Icon(Icons.send),
           ),
-          floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-          bottomNavigationBar: BottomBarApp(tabIndex: bottomBarState.currentIndex),
+          floatingActionButtonLocation:
+              FloatingActionButtonLocation.centerDocked,
+          bottomNavigationBar:
+              BottomBarApp(tabIndex: bottomBarState.currentIndex),
         );
       },
     );

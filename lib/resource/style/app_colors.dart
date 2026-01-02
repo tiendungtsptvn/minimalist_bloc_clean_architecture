@@ -43,7 +43,8 @@ class AppColors {
     primaryBackgroundItemColor: Color.fromARGB(255, 39, 39, 39),
     secondaryBackgroundItemColor: Color.fromARGB(255, 83, 83, 83),
     primaryBorderColor: Color.fromARGB(255, 151, 151, 151),
-    primaryGradient: LinearGradient(colors: [Color(0xFFFFFFFF), Color(0xFFFE6C30)]),
+    primaryGradient:
+        LinearGradient(colors: [Color(0xFFFFFFFF), Color(0xFFFE6C30)]),
   );
 
   static const lightThemeColor = AppColors(
@@ -61,7 +62,8 @@ class AppColors {
     primaryBackgroundItemColor: Color.fromARGB(255, 217, 214, 214),
     secondaryBackgroundItemColor: Color.fromARGB(255, 159, 158, 158),
     primaryBorderColor: Color.fromARGB(255, 124, 124, 124),
-    primaryGradient: LinearGradient(colors: [Color(0xFFFFFFFF), Color(0xFFFE6C30)]),
+    primaryGradient:
+        LinearGradient(colors: [Color(0xFFFFFFFF), Color(0xFFFE6C30)]),
   );
 
   /// Init current color, call it when init app.
@@ -90,9 +92,12 @@ class AppColors {
       secondaryColor: secondaryColor ?? this.secondaryColor,
       primaryTextColor: primaryTextColor ?? this.primaryTextColor,
       secondaryTextColor: secondaryTextColor ?? this.secondaryTextColor,
-      primaryBackgroundColor: primaryBackgroundColor ?? this.primaryBackgroundColor,
-      secondaryBackgroundColor: secondaryBackgroundColor ?? this.secondaryBackgroundColor,
-      primaryBackgroundItemColor: primaryBackgroundItemColor ?? this.primaryBackgroundItemColor,
+      primaryBackgroundColor:
+          primaryBackgroundColor ?? this.primaryBackgroundColor,
+      secondaryBackgroundColor:
+          secondaryBackgroundColor ?? this.secondaryBackgroundColor,
+      primaryBackgroundItemColor:
+          primaryBackgroundItemColor ?? this.primaryBackgroundItemColor,
       secondaryBackgroundItemColor:
           secondaryBackgroundItemColor ?? this.secondaryBackgroundItemColor,
       primaryBorderColor: primaryBorderColor ?? this.primaryBorderColor,

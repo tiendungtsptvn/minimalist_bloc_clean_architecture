@@ -1,17 +1,18 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:minimalist_bloc_clean_architecture/core/base/widgets/widget.dart';
-import 'package:minimalist_bloc_clean_architecture/presentation/app/bloc/app_bloc.dart';
 
-class ProfileScreen extends BaseScreenApp {
+import '../../app/locale/locale_cubit.dart';
+import '../../app/theme/theme_cubit.dart';
+
+class ProfileScreen extends AppStateful {
   const ProfileScreen({super.key});
 
   @override
-  BaseScreenAppState<ProfileScreen> createState() => _ProfileScreenState();
+  AppStatefulState<ProfileScreen> createState() => _ProfileScreenState();
 }
 
-class _ProfileScreenState extends BaseScreenAppState<ProfileScreen> {
+class _ProfileScreenState extends AppStatefulState<ProfileScreen> {
   @override
   Widget buildScreen(BuildContext context) {
     return Center(
@@ -25,7 +26,7 @@ class _ProfileScreenState extends BaseScreenAppState<ProfileScreen> {
           ),
           ElevatedButton(
             onPressed: () {
-              BlocProvider.of<GlobalAppCubit>(context, listen: false).changeTheme();
+              context.read<ThemeCubit>().changeTheme();
             },
             child: const Text("Change theme"),
           ),
@@ -34,11 +35,7 @@ class _ProfileScreenState extends BaseScreenAppState<ProfileScreen> {
           ),
           ElevatedButton(
             onPressed: () {
-              if(context.locale.languageCode == 'en'){
-                ReadContext(context).read<GlobalAppCubit>().changeAppLocale(const Locale('vi', 'VN'));
-              }else{
-                ReadContext(context).read<GlobalAppCubit>().changeAppLocale(const Locale('en', 'US'));
-              }
+              context.read<LocaleCubit>().switchLanguage();
             },
             child: const Text("Change language"),
           ),
